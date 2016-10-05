@@ -15,7 +15,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
-import ch.fdehedin.domain.Person;
+import ch.fdehedin.model.Person;
 
 public class PersonDaoTest {
 
