@@ -2,6 +2,8 @@ package ch.fdehedin.controller;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,11 +24,14 @@ import io.swagger.annotations.ApiResponses;
 @RequestMapping("api")
 public class PersonController {
 
+	private static final Logger logger = LoggerFactory.getLogger(PersonController.class);
+
 	PersonService personService;
 
 	@Autowired
 	public PersonController(final PersonService personService) {
 		this.personService = personService;
+		logger.debug("creating PersonController");
 	}
 
 	@ApiOperation(value = "getAll", nickname = "getAll")
@@ -36,12 +41,15 @@ public class PersonController {
 	 * 
 	 * @ApiImplicitParam(name = "name", value = "User's name", required = false,
 	 * dataType = "string", paramType = "query", defaultValue = "FDN") })
-	 */ 
+	 */
 	@ApiResponses(value = {
 			@ApiResponse(code = 200, message = "Success", response = Person.class, responseContainer = "List"),
 			@ApiResponse(code = 401, message = "Unauthorized"), @ApiResponse(code = 403, message = "Forbidden"),
 			@ApiResponse(code = 404, message = "Not Found"), @ApiResponse(code = 500, message = "Failure") })
 	public ResponseEntity<List<Person>> getAll() {
+
+		logger.debug("inside getAll");
+
 		final List<Person> lst = this.personService.getAll();
 		if (lst.isEmpty()) {
 			return new ResponseEntity<List<Person>>(HttpStatus.NO_CONTENT);
@@ -50,12 +58,11 @@ public class PersonController {
 	}
 
 	@ApiOperation(value = "getById", nickname = "getById")
-	
-	  @ApiImplicitParams({
-	  
-	  @ApiImplicitParam(name = "id", value = "Person's ID", required = false,
-	  dataType = "Long", paramType = "path", defaultValue = "1") })
-	  
+
+	@ApiImplicitParams({
+
+			@ApiImplicitParam(name = "id", value = "Person's ID", required = false, dataType = "Long", paramType = "path", defaultValue = "1") })
+
 	@RequestMapping(method = RequestMethod.GET, path = "person/{id}", produces = "application/json")
 	public ResponseEntity<Person> getById(@PathVariable final Long id) {
 		final Person person = this.personService.getById(id);
