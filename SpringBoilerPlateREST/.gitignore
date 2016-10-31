@@ -15,6 +15,7 @@ local.properties
 
 # Eclipse Core
 .project
+.factorypath
 
 # Locally stored "Eclipse launch configurations"
 *.launch
