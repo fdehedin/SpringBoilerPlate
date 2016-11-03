@@ -2,7 +2,6 @@ package ch.fdehedin.service;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 
-import java.time.temporal.UnsupportedTemporalTypeException;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Date;

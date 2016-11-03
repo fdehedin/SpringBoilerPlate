@@ -1,12 +1,14 @@
 package ch.fdehedin.springconfig;
 
-import com.google.common.base.Predicate;
 import static com.google.common.base.Predicates.or;
+import static springfox.documentation.builders.PathSelectors.regex;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Profile;
+
+import com.google.common.base.Predicate;
+
 import springfox.documentation.builders.ApiInfoBuilder;
-import static springfox.documentation.builders.PathSelectors.regex;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;

@@ -1,7 +1,6 @@
 package ch.fdehedin.model;
 
 import java.util.Date;
-import java.util.Random;
 
 public class Person {
 
@@ -140,7 +139,6 @@ public class Person {
 		private String lastName;
 		private String email;
 		private Date birthDate;
-		private Status status;
 
 		public PersonBuilder() {
 

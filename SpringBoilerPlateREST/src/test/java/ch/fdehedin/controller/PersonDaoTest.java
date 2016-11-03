@@ -24,7 +24,6 @@ public class PersonDaoTest {
 	public static final String REST_SERVICE_URI = "http://localhost:8080/SpringBoilerPlate/api";
 
 	/* GET */
-	@SuppressWarnings("unchecked")
 	@Test
 	public void getAll() {
 		try {
