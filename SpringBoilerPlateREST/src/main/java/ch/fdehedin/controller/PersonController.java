@@ -29,7 +29,7 @@ public class PersonController {
 	private static final Logger logger = LoggerFactory.getLogger(PersonController.class);
 
 	PersonService personService;
-
+ 
 	@Autowired
 	public PersonController(final PersonService personService) {
 		this.personService = personService;

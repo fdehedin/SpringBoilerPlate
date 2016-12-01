@@ -9,9 +9,9 @@ import ch.fdehedin.service.PersonServiceImpl;
 @Configuration
 public class AppConfig {
 
-	@Bean
-	public PersonService getPersonService() {
-		return new PersonServiceImpl();
-	}
-
+//	@Bean
+//	public PersonService getPersonService() {
+//		return new PersonServiceImpl();
+//	}
+ 
 }

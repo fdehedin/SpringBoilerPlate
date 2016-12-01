@@ -39,7 +39,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 	 * registry.addViewController("/").setViewName("swagger-ui.html"); //
 	 * registry.addViewController("/").setViewName("swagger-ui"); }
 	 */
-
+ 
 	@Bean
 	public InternalResourceViewResolver viewResolver() {
 		InternalResourceViewResolver resolver = new InternalResourceViewResolver();
