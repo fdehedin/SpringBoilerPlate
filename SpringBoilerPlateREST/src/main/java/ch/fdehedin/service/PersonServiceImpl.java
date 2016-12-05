@@ -21,7 +21,7 @@ public class PersonServiceImpl implements PersonService {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(PersonServiceImpl.class);
 
-	private final HashMap<Integer, Person> persons = new HashMap<>();
+	private final HashMap<Integer, Person> persons = new HashMap<Integer, Person>();
 	private int nextId = 0;
 
 	public PersonServiceImpl() {
